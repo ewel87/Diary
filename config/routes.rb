@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   get '/entries/new', to: 'entries#new', as: 'new_entry'
   get '/entries/:id', to: 'entries#show', as:'entry'
   post '/entries', to: 'entries#create'
+  get 'entries/edit/:id', to: 'entries#edit', as: 'edit_entry'
+  patch '/entries/:id', to: 'entries#update'
+
 end
