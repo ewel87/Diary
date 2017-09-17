@@ -8,11 +8,21 @@ class EntriesController < ApplicationController
     ]
     render 'entries/index'
 
-
   end
+
     def show
-      binding.pry
     @entry = Entry.find(params["id"])
   render 'entries/show'
   end
+
+   def create
+    # entry_params = params["entry"]
+    # entry = Entry.create(entry_params)
+    #
+    # render(:plain => params['entry']['title'].inspect)
+    entry = Entry.create(title: params['entry']['title'],date: Date.current, dontents: params['entry']['dontents'])
+    redirect_to(entry_path(entry))
+
+  end
+
 end

@@ -13,7 +13,10 @@
           <% for url, name in @websites %>
             <li><a href="<%= url %>"><%= name %></a></li>
           <% end %>
+
         </ul>
 
       </div>
+      <%= link_to("New entry", new_entry_path) %>
+      <p>
       <img src="http://railsgirls.com/images/rg-warsaw.png" />
